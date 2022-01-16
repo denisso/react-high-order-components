@@ -22,7 +22,7 @@ function Comments() {
     };
     return {
         getComments: () => self.comments,
-        getBlogPost: (id) => self.post[0 | Math.abs(id % self.post.length)],
+        getBlogPost: (id) => self.posts[0 | Math.abs(id % self.posts.length)],
         addChangeListener: (handler) => handlers.add(handler),
         removeChangeListener: (handler) => handlers.delete(handler)
     };
