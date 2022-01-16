@@ -8,23 +8,21 @@ function Comments() {
             }, {
                 id: 2,
                 comment: "comment 2"
+            }
+        ],
+        posts: [
+            {
+                id: 1,
+                post: "post 1"
             }, {
-                id: 3,
-                comment: "comment 3"
-            }, {
-                id: 4,
-                comment: "comment 4"
-            }, {
-                id: 5,
-                comment: "comment 5"
-            }, {
-                id: 6,
-                comment: "comment 6"
+                id: 2,
+                post: "post 2"
             }
         ]
     };
     return {
         getComments: () => self.comments,
+        getBlogPost: (id) => self.post[0 | Math.abs(id % self.post.length)],
         addChangeListener: (handler) => handlers.add(handler),
         removeChangeListener: (handler) => handlers.delete(handler)
     };
